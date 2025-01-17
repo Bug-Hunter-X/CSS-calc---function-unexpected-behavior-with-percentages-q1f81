@@ -1,0 +1,23 @@
+Instead of using `calc(50% - 10px)`, consider using flexible box (flexbox) or grid layout. These allow you to distribute space among child elements more reliably.  For example:
+
+/* Using Flexbox */
+.container {
+  display: flex;
+}
+
+.element {
+  flex: 1;
+  margin-right: 10px; /* Or margin-left depending on your needs */
+}
+
+/*Using Grid*/
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(50%,1fr));
+  grid-gap:10px;
+}
+.element{
+  /*styles*/
+}
+
+This ensures the elements correctly adjust their sizes based on the container, avoiding the calculation issues related to using `calc()` with percentages and pixels.
